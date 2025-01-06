@@ -22,4 +22,8 @@
   .text-outline-hover {
     -webkit-text-stroke: 1px #00ff99;
   }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: black; /* Change color as needed */
+  }
 }

@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/pageTransition";
 import StairEffect from "@/components/StairEffect";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -21,7 +23,9 @@ export default function RootLayout({ children }) {
       <body className={`${jetbrainsMono.variable}  antialiased`}>
         <Header />
         <StairEffect />
-        <PageTransition>{children}</PageTransition>
+        <PageTransition>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </PageTransition>
       </body>
     </html>
   );

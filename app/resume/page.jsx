@@ -136,7 +136,7 @@ const Resume = () => {
       animate={{
         opacity: 1,
         transition: {
-          delay: 1.6,
+          delay: 1,
           duration: 0.4,
           ease: "easeInOut",
         },
