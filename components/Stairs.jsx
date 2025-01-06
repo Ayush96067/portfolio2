@@ -60,19 +60,13 @@ creating a staggered effect with decreasing delay for each subsequent step
 
           //   backgroundColor: { duration: 3, ease: "easeInOut" },
         }}
-        className="h-full flex items-center w-full justify-center transition bg-black  relative"
+        className="h-full flex items-center w-full justify-center transition  bg-black  relative"
       >
         <motion.p
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute text-center text-black"
+          className="absolute text-center  text-black"
         >
-          <Image
-            src={"/Loading.gif"}
-            className="rounded-lg"
-            alt="loading img"
-            width={1000}
-            height={100}
-          />
+          <Image src={"/Loading.gif"} width={1000} height={100} alt="spin" />
         </motion.p>
       </motion.div>
     </>

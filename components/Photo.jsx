@@ -28,7 +28,7 @@ function Photo() {
             priority
             quality={100}
             className="object-contain "
-            fill
+            fill={true}
           />
         </motion.div>
 

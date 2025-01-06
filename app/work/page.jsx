@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
 // import "swiper/swiper-bundle.min.css";
 // import "swiper/swiper.min.css";
 import "swiper/css/navigation";
@@ -19,6 +18,9 @@ import {
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { MoveLeft, MoveRight } from "lucide-react";
+import WorkSliderButtons from "@/components/WorkSliderButtons";
 
 const projects = [
   {
@@ -88,7 +90,13 @@ const projects = [
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
-
+  const [swiperRef, setSwiperRef] = useState();
+  const handleRight = () => {
+    swiperRef?.slideNext();
+  };
+  const handleLeft = () => {
+    swiperRef?.slidePrev();
+  };
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -153,6 +161,7 @@ const Work = () => {
           </div>
           <div className="w-full xl:w-[50%]">
             <Swiper
+              onSwiper={setSwiperRef}
               spaceBetween={30}
               slidesPerView={1}
               className="xl:h-[520px] mb-12 "
@@ -160,11 +169,17 @@ const Work = () => {
                 setProject(projects[swiper.activeIndex]);
               }}
             >
+              {/* <Button
+                onClick={handleLeft}
+                className="z-40 left-2  text-white bg-black/30 absolute  top-[50%] xl:top-[42%] text-base p-2"
+              >
+                <MoveLeft />
+              </Button> */}
               {projects.map((project, index) => {
                 return (
-                  <SwiperSlide modules={[Navigation]} key={index}>
+                  <SwiperSlide key={index}>
                     <div className="h-[460px] relative bg-pink-50/20 items-center flex group justify-center">
-                      <div></div>
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       <div className="relative w-full h-full">
                         <Image
                           fill={true}
@@ -177,6 +192,16 @@ const Work = () => {
                   </SwiperSlide>
                 );
               })}
+              {/* <Button
+                className="z-40 text-white bg-black/30 absolute right-2 top-[50%] xl:top-[42%] text-base p-2"
+                onClick={handleRight}
+              >
+                <MoveRight />
+              </Button> */}
+              <WorkSliderButtons
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%-22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles="bg-accent mx-2 xl:mx-0 hover:bg-accent-hover text-primary rounded-full xl:rounded-none text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+              />
             </Swiper>
           </div>
         </div>
