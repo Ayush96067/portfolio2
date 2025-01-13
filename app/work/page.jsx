@@ -25,64 +25,62 @@ import WorkSliderButtons from "@/components/WorkSliderButtons";
 const projects = [
   {
     num: "01",
-    category: "frontend project",
-    title: "Project 1",
+    category: "Frontend project",
+    title: "Travel List",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consectetur dicta vitae suscipit dolor odio distinctio tempore ab quae?",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/work/proj1.jpg",
+      "Imagine you have a list on your phone or computer where you can add things you need to pack for a trip, along with how many of each item you need. As you pack each item, you can check it off the list to remove it. You can also organize the list in different ways, like by the order you added the items, by the item descriptions, or by whether you've packed them or not.Think of it as your digital packing helper! 🚀📋",
+    stack: [{ name: "React.js" }, { name: "Css 3" }, { name: "HTML" }],
+    image: "/assets/work/Travel.jpg",
     live: "",
     github: "",
   },
   {
     num: "02",
-    category: "frontend",
-    title: "Project 2",
+    category: "Front End",
+    title: "Movie Store",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consectetur dicta vitae suscipit dolor odio distinctio tempore ab quae?",
-    stack: [{ name: "Next js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/proj2.jpg",
+      "Picture a website where you can look up your favorite movies, give them ratings, and find out all the details about them using information from IMDb. You can learn about the movie's plot, the actors who star in it, and its genre. It's like having your own personal movie database! It sounds like a fantastic resource for movie lovers! 🍿🎬",
+    stack: [{ name: "React JS" }, { name: "CSS" }, { name: "HTML" }],
+    image: "/assets/work/MovieStore.jpg",
     live: "",
     github: "",
   },
   {
     num: "03",
-    category: "Fullstack",
-    title: "Project 3",
+    category: "Backend Project",
+    title: "Cloud File storage app",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consectetur dicta vitae suscipit dolor odio distinctio tempore ab quae?",
-    stack: [{ name: "Node.js" }, { name: "React.js" }, { name: "Express" }],
-    image: "/assets/work/proj3.jpg",
+      "An app that allows you to securely upload various types of files—like PDFs, images, or Word documents—into a database. Only authorized users can add or retrieve files, ensuring the highest level of security for your data. You can effortlessly access your uploaded files using your email, making it convenient and reliable. A solution for anyone looking to keep their files safe and easily accessible! 🛡️📁✨",
+    stack: [
+      { name: "Node.js" },
+      { name: "Ejs" },
+      { name: "Express" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/Cloud.jpg",
     live: "",
     github: "",
   },
   {
     num: "04",
     category: "Frontend",
-    title: "Project 4",
+    title: "Split Expenses",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consectetur dicta vitae suscipit dolor odio distinctio tempore ab quae?",
-    stack: [
-      { name: "Next.js" },
-      { name: "React.js" },
-      { name: "Tailwind.css" },
-    ],
-    image: "/assets/work/proj4.jpg",
+      "An app built with React that makes it easy to split bills with your friends when you go out to a restaurant or any other place. You can add a friend, enter the total bill amount, specify your own expenses, and indicate who is paying. The app will then calculate and show you who owes whom and how much.",
+    stack: [{ name: "React.js" }, { name: "CSS3" }, { name: "HTML" }],
+    image: "/assets/work/splitExp.jpg",
     live: "",
     github: "",
   },
+
   {
     num: "05",
-    category: "Frontend",
-    title: "Project 5",
+    category: "Front End",
+    title: "Calc Age",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consectetur dicta vitae suscipit dolor odio distinctio tempore ab quae?",
-    stack: [
-      { name: "Next.js" },
-      { name: "React.js" },
-      { name: "Tailwind.css" },
-    ],
-    image: "/assets/work/proj5.jpg",
+      "An app developed with Next.jsthat allows you to calculate your age in a fascinatingly detailed way. Not only can you see your age in years, but the app also breaks it down into months, days, hours, minutes, and even seconds! It's an engaging tool that shows you just how much time has passed since you were born, down to the tiniest unit of time. Whether you’re curious about how many minutes you’ve been alive or the exact number of days.",
+    stack: [{ name: "React.js" }, { name: "HTML" }, { name: "CSS" }],
+    image: "/assets/work/calcAge.jpg",
     live: "",
     github: "",
   },
@@ -114,7 +112,7 @@ const Work = () => {
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category}
+                {project.title}
               </h2>
               <p className="text-white/60 ">{project.description}</p>
               <ul className="flex gap-4">
@@ -147,7 +145,7 @@ const Work = () => {
                 <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                      <TooltipTrigger className="w-[70px]  h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
                         <BsGithub className="text-white text-3xl group-hover:text-accent" />
                       </TooltipTrigger>
                       <TooltipContent>
@@ -178,13 +176,13 @@ const Work = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <div className="h-[460px] relative bg-pink-50/20 items-center flex group justify-center">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      <div className="relative w-full h-full">
+                    <div className="h-[460px] rounded-3xl relative bg-pink-50/20 items-center flex group justify-center">
+                      <div className="absolute top-0 bottom-0  w-full h-full bg-black/10 z-10"></div>
+                      <div className="relative w-full h-full ">
                         <Image
                           fill={true}
                           src={project.image}
-                          className="object-cover"
+                          className="object-contain bg-white rounded-3xl "
                           alt=""
                         />
                       </div>

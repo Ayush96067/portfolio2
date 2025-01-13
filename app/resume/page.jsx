@@ -1,7 +1,14 @@
 "use client";
 
 import { FaHtml5, FaCss3, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiMongoose,
+  SiMysql,
+} from "react-icons/si";
 
 const about = {
   title: "About me",
@@ -115,6 +122,22 @@ const skills = {
     {
       icon: <FaNodeJs />,
       name: "Node.js",
+    },
+    {
+      icon: <SiExpress />,
+      name: "Express.js",
+    },
+    {
+      icon: <SiMongodb />,
+      name: "MongoDB",
+    },
+    {
+      icon: <SiMongoose />,
+      name: "Mongoose",
+    },
+    {
+      icon: <SiMysql />,
+      name: "MySQl",
     },
   ],
 };
