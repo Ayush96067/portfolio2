@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import CountUp from "react-countup";
 
 const stats = [
@@ -26,7 +27,14 @@ const stats = [
 
 function Stats() {
   return (
-    <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 1.9, duration: 0.8 },
+      }}
+      className="pt-4 pb-12 xl:pt-0 xl:pb-0"
+    >
       <div className="container mx-auto">
         <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((stat, index) => {
@@ -53,7 +61,7 @@ function Stats() {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

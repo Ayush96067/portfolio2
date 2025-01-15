@@ -10,28 +10,28 @@ const services = [
     title: "FrontEnd Development",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
-    href: "",
+    href: "/services/FrontEnd",
   },
   {
     num: "02",
     title: "Backend Development",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
-    href: "",
+    href: "/services/Backend",
   },
   {
     num: "03",
     title: "UI/UX Design",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
-    href: "",
+    href: "/services/UIUX",
   },
   {
     num: "04",
     title: "Responsive building",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
-    href: "",
+    href: "/services/ResponsiveBuilding",
   },
 ];
 
@@ -54,7 +54,7 @@ const Services = () => {
                 className="flex flex-col flex-1 justify-center gap-6 group "
               >
                 <div className="w-full flex  justify-between items-center">
-                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
+                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover  transition-all duration-500">
                     {service.num}
                   </div>
                   <Link

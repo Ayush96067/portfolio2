@@ -39,10 +39,9 @@ function Photo() {
           viewBox="0 0 506 506"
           xmlns="https://www.w3.org/2000/svg"
         >
-          <motion.circle
-            cx="253"
-            cy="253"
-            r="250"
+          <motion.rect
+            width={500}
+            height={500}
             stroke={"#00ff99"}
             strokeWidth="4"
             strokeLinecap="round"
@@ -51,8 +50,8 @@ function Photo() {
               strokeDasharray: "24 10 0 0",
             }}
             animate={{
-              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-              rotate: [120, 360],
+              strokeDasharray: ["15 100 25 25", "10 140 90 90"],
+              // rotate: [120, 360],
             }}
             transition={{
               duration: 10,
