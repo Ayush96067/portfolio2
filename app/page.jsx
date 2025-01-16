@@ -53,10 +53,12 @@ const page = () => {
                 opacity: 1,
                 transition: { delay: 1.7, duration: 0.7 },
               }}
-              className="max-w-[500px] mb-9 text-white/80"
+              className="max-w-[500px] mb-9  text-para"
             >
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies
+              Passionate Computer Science student with strong technical and
+              analytical skills, equipped with hands-on experience from diverse
+              internships. I am commited to continuous learning and contributing
+              to innovative ideas.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}

@@ -9,28 +9,28 @@ const services = [
     num: "01",
     title: "FrontEnd Development",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
+      "The process of building the visual and interactive parts of a website or app that users see and interact with",
     href: "/services/FrontEnd",
   },
   {
     num: "02",
     title: "Backend Development",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
+      "The process of working on the server-side software of a website, ensuring the website functions properly with databases, architecture and servers",
     href: "/services/Backend",
   },
   {
     num: "03",
-    title: "UI/UX Design",
+    title: "Problem Solving",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
-    href: "/services/UIUX",
+      "Techniques in computer science that includes methods for finding solutions to complex issues using algorithmic or heuristic approaches",
+    href: "/services/problem-solving",
   },
   {
     num: "04",
     title: "Responsive building",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, corruptadf",
+      "Approach to make web pages render well on all screen sizes and resolutions while ensuring good usability.",
     href: "/services/ResponsiveBuilding",
   },
 ];
@@ -38,20 +38,20 @@ const services = [
 const Services = () => {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
-      <div className="container mx-auto">
+      <div className="p-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+          className="grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[90px] xl:gap-[100px]"
         >
           {services.map((service, index) => {
             return (
               <div
                 key={index}
-                className="flex flex-col flex-1 justify-center gap-6 group "
+                className="flex flex-col border-x-2 border-y-8 border-purple-800 shadow p-4  flex-1 justify-center gap-6 group "
               >
                 <div className="w-full flex  justify-between items-center">
                   <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover  transition-all duration-500">
@@ -68,8 +68,8 @@ const Services = () => {
                 <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
                   {service.title}
                 </h2>
-                <p className="text-white/60">{service.description}</p>
-                <div className="border-b border-white/20 w-full"></div>
+                <p className="text-para">{service.description}</p>
+                {/* <div className="border-b border-white/20 w-full"></div> */}
               </div>
             );
           })}

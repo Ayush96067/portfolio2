@@ -26,4 +26,15 @@
   .swiper-button-next {
     color: black; /* Change color as needed */
   }
+  .animate {
+    @apply animate-bounce;
+  }
+}
+
+.shadow {
+  box-shadow: 1px 1px 12px 4px rgb(139, 4, 249);
+}
+
+.shadow_image {
+  box-shadow: 1px 1px 20px 4px rgb(133, 0, 170);
 }

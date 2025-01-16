@@ -28,6 +28,10 @@ export default {
           DEFAULT: "#e11eff",
           hover: "#e11eff",
         },
+        para: {
+          DEFAULT: "#ffffffa2",
+          dark: "#000",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

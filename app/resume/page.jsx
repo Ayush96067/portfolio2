@@ -1,6 +1,14 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaNodeJs,
+  FaReact,
+  FaJava,
+  FaBootstrap,
+} from "react-icons/fa";
 import {
   SiTailwindcss,
   SiNextdotjs,
@@ -8,12 +16,14 @@ import {
   SiMongodb,
   SiMongoose,
   SiMysql,
+  SiCplusplus,
+  SiShadcnui,
 } from "react-icons/si";
 
 const about = {
   title: "About me",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odio fugit quia dolores doloribus qui cum necessitatibus?",
+    "An aspiring Software Engineer and always keen to learn new technologies and frameworks to build more useful and impactfull projects. I am driven by curiosity to explore new challenges and understanding the ever-evolving tech landscape. In addition to my technical expertise, I pride myself on my problem solving abilities, analytical thinking, and effective communication skills.",
   info: [
     {
       fieldName: "Name",
@@ -46,7 +56,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odio fugit quia dolores doloribus qui cum necessitatibus?",
+    "I have developed a comprehensive understanding and robust foundation in Computer Science and Technology over my course of internships in distinct and dynamic companies with hands on experiences on various impactful projects",
   items: [
     {
       company: "Grras Solution pvt Ltd",
@@ -70,7 +80,7 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem odio fugit quia dolores doloribus qui cum necessitatibus?",
+    "Its been an intrumental journey of acadmics in shaping my skills, both technical and analytical. I have acquired great understanding of computer science principals and their practical applications.",
   items: [
     {
       institution: "PIET, Jaipur",
@@ -93,7 +103,7 @@ const education = {
 const skills = {
   title: "My Skills",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa inventore nobis, accusamus at accusantium ipsum",
+    "These are my diverse set of technical skills developed through acadmics and during the internship tenure. My expertise encompasses the following:",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -108,6 +118,18 @@ const skills = {
       name: "JS",
     },
     {
+      icon: <SiCplusplus />,
+      name: "CPP",
+    },
+    {
+      icon: <FaJava />,
+      name: "Java",
+    },
+    {
+      icon: <SiMysql />,
+      name: "MySQl",
+    },
+    {
       icon: <FaReact />,
       name: "React.js",
     },
@@ -118,6 +140,14 @@ const skills = {
     {
       icon: <SiTailwindcss />,
       name: "Tailwind css",
+    },
+    {
+      icon: <BsBootstrap />,
+      name: "Bootstrap",
+    },
+    {
+      icon: <SiShadcnui />,
+      name: "Shadcn UI",
     },
     {
       icon: <FaNodeJs />,
@@ -135,10 +165,6 @@ const skills = {
       icon: <SiMongoose />,
       name: "Mongoose",
     },
-    {
-      icon: <SiMysql />,
-      name: "MySQl",
-    },
   ],
 };
 
@@ -149,10 +175,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { BsBootstrap } from "react-icons/bs";
 
 const Resume = () => {
+  const [isLabelOpen, setIsLabelOpen] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -247,24 +278,26 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:gap-[30px] gap-4">
                   {skills.skillList.map((item, index) => {
                     return (
                       <li key={index}>
                         <TooltipProvider
-                          disableHoverableContent={true}
                           delayDuration={100}
                           skipDelayDuration={500}
                         >
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                              <div
+                                className="text-6xl flex flex-col justify-center items-center gap-2 group-hover:text-accent transition-all duration-300"
+                                onClick={() => setIsLabelOpen(true)}
+                              >
                                 {item.icon}
+                                <p className="text-sm tracking-widest font-thin ">
+                                  {item.name}
+                                </p>
                               </div>
                             </TooltipTrigger>
-                            <TooltipContent>
-                              <p>{item.name}</p>
-                            </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
                       </li>
