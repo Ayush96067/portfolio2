@@ -171,7 +171,6 @@ const skills = {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
-  TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
@@ -182,8 +181,6 @@ import { useState } from "react";
 import { BsBootstrap } from "react-icons/bs";
 
 const Resume = () => {
-  const [isLabelOpen, setIsLabelOpen] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -202,7 +199,7 @@ const Resume = () => {
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsList className="flex flex-col rounded-2xl w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
@@ -288,10 +285,7 @@ const Resume = () => {
                         >
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div
-                                className="text-6xl flex flex-col justify-center items-center gap-2 group-hover:text-accent transition-all duration-300"
-                                onClick={() => setIsLabelOpen(true)}
-                              >
+                              <div className="text-6xl flex flex-col justify-center items-center gap-2 group-hover:text-accent transition-all duration-300">
                                 {item.icon}
                                 <p className="text-sm tracking-widest font-thin ">
                                   {item.name}

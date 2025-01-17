@@ -38,8 +38,8 @@ function Stats() {
       }}
       className="pt-4 pb-12 xl:pt-0 xl:pb-0"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-wrap  gap-6 max-w-[80vw] mx-auto xl:max-w-none">
+      <div className="container mx-auto lg:mr-10">
+        <div className="flex flex-wrap lg:flex-nowrap  lg:flex-col  mr-10 gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((stat, index) => {
             return (
               <div

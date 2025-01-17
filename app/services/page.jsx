@@ -51,9 +51,9 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col border-x-2 border-y-8 border-purple-800 shadow p-4  flex-1 justify-center gap-6 group "
+                className="box flex transition-all duration-200 flex-col bg-black/40 border-x-2 border-y-2  shadow p-4 flex-1 justify-center gap-6 group "
               >
-                <div className="w-full flex  justify-between items-center">
+                <div className="w-full flex justify-between items-center">
                   <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover  transition-all duration-500">
                     {service.num}
                   </div>

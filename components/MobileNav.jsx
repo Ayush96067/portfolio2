@@ -35,15 +35,17 @@ function MobileNav() {
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[24px] text-accent" />
+        <CiMenuFries className="text-[24px] text-white font-extrabold" />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         <div className="mt-32 mb-10 text-center text-2xl">
-          <Link href={"/"}>
-            <h1 className="text-3xl font-semibold">
-              Ayush <span className="text-accent">.</span>
-            </h1>
-          </Link>
+          <SheetPrimitive.Close asChild>
+            <Link href={"/"}>
+              <h1 className="text-3xl font-semibold">
+                Ayush <span className="text-accent">.</span>
+              </h1>
+            </Link>
+          </SheetPrimitive.Close>
         </div>
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, id) => {

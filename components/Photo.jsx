@@ -22,11 +22,11 @@ function Photo() {
           className="w-[298px] h-[298px]  xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/mahakal.jpeg"
+            src="/assets/profile3.jpg"
             alt=""
             priority
             quality={100}
-            className="object-contain "
+            className="object-cover"
             fill={true}
           />
         </motion.div>
@@ -41,7 +41,7 @@ function Photo() {
           <motion.rect
             width={500}
             height={500}
-            stroke={"#00ff99"}
+            stroke={"#AD49E1"}
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -49,7 +49,7 @@ function Photo() {
               strokeDasharray: "24 10 0 0",
             }}
             animate={{
-              strokeDasharray: ["15 100 25 25", "10 140 90 90"],
+              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
               // rotate: [120, 360],
             }}
             transition={{

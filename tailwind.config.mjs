@@ -25,7 +25,7 @@ export default {
       colors: {
         primary: "#1c1c22",
         accent: {
-          DEFAULT: "#e11eff",
+          DEFAULT: "#AD49E1",
           hover: "#e11eff",
         },
         para: {

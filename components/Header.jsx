@@ -11,7 +11,7 @@ function Header() {
       <div className="container mx-auto flex justify-between items-center">
         <Link href={"/"}>
           <h1 className=" flex text-4xl font-semibold gap-1">
-            Ayush<span className="text-accent">.</span>
+            Know me<span className="text-accent">.</span>
           </h1>
         </Link>
 

@@ -19,9 +19,9 @@ const page = () => {
   };
 
   return (
-    <section className="h-full">
+    <section className="h-full justify-center items-center flex flex-col lg:flex-row">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        <div className="flex rounded-2xl bg-black my-5 w-full p-4 flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center  xl:text-left order-2 xl:order-none">
             <motion.p
               initial={{ opacity: 0, translateY: "-100%" }}

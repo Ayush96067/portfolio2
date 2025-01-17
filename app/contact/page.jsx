@@ -11,9 +11,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const info = [
   {
@@ -34,6 +36,34 @@ const info = [
 ];
 
 function Contact() {
+  const [isOpen, setIsOpen] = useState(false);
+  const { toast } = useToast();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    formData.append("access_key", "f7a6d5c7-2f84-4fe6-b139-36fa7b10068c");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    });
+    const result = await res.json();
+    if (result.success)
+      toast({
+        varient: "destructive",
+        title: "Successfull",
+        description: "Thanks for the initiative",
+      });
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -47,7 +77,10 @@ function Contact() {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+            >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
@@ -56,31 +89,58 @@ function Contact() {
               </p>
               {/* inputs */}
               <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
-                <Input type="firsname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input
+                  type="firstname"
+                  name="firstname"
+                  placeholder="Firstname"
+                  required
+                />
+
+                <Input
+                  required
+                  type="lastname"
+                  name="lastname"
+                  placeholder="Lastname"
+                />
+                <Input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                />
+                <Input
+                  required
+                  type="phone"
+                  name="phone"
+                  placeholder="Phone number"
+                />
               </div>
               {/* select */}
-              <Select>
+              <Select required name="service">
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="fed">FrontEnd Development</SelectItem>
-                    <SelectItem value="bed">Backend Development</SelectItem>
-                    <SelectItem value="fsd">FullStack Development</SelectItem>
-                    <SelectItem value="ad">Android Development</SelectItem>
+                    <SelectItem value="Frontend">
+                      FrontEnd Development
+                    </SelectItem>
+                    <SelectItem value="Backend">Backend Development</SelectItem>
+                    <SelectItem value="Fullstack">
+                      FullStack Development
+                    </SelectItem>
+                    <SelectItem value="Android">Android Development</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
               {/* Text area */}
 
               <Textarea
+                name="message"
                 className="h-[200px] rounded-xl"
                 placeholder="Type your message here"
+                required
               />
               {/* btn */}
               <Button size="md" className="max-w-40">
