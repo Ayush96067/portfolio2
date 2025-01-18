@@ -22,7 +22,7 @@ function Photo() {
           className="w-[298px] h-[298px]  xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/profile3.jpg"
+            src="/assets/profile4.jpg"
             alt=""
             priority
             quality={100}
