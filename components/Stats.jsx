@@ -15,7 +15,7 @@ const stats = [
   },
   {
     num: 5,
-    text: "Lamguages Learned",
+    text: "Languages Learned",
   },
   {
     num: 10,
