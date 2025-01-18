@@ -19,11 +19,6 @@ import { useState } from "react";
 
 const info = [
   {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "+91 9782604530",
-  },
-  {
     icon: <FaEnvelope />,
     title: "Email",
     description: "ayushsharma722001@gmail.com",
