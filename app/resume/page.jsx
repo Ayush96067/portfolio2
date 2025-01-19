@@ -29,10 +29,7 @@ const about = {
       fieldName: "Name",
       fieldValue: "Ayush Sharma",
     },
-    {
-      fieldName: "Phone",
-      fieldValue: "(+91) 9782604530",
-    },
+
     {
       fieldName: "Experience",
       fieldValue: "1+ years",
